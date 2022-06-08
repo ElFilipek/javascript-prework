@@ -1,6 +1,6 @@
 function playGame(playerInput,){
     clearMessages()
-    function getMoveName(randomNumber){
+    function getMoveName(randomNumber, playerInput){
         if(randomNumber == 1){
         return 'kamień';
         }
@@ -13,8 +13,7 @@ function playGame(playerInput,){
     
         printMessage('Nie znam ruchu o id ' + randomNumber + '.');
             return 'nieznany ruch';
-    }
-    function getMoveName(playerInput){
+    
         if (playerInput == 1) {
             return 'kamień';
         }
