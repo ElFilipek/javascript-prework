@@ -1,4 +1,4 @@
-function getMoveName(randomNumber, playerInput){
+function getMoveName(randomNumber){
     if(randomNumber == 1){
       return 'kamień';
     }
@@ -12,18 +12,7 @@ function getMoveName(randomNumber, playerInput){
     printMessage('Nie znam ruchu o id ' + randomNumber + '.');
         return 'nieznany ruch';
 
-    if (playerInput == 1) {
-        return 'kamień';
-    }
-    else if (playerInput == 2) {
-        return 'papier';
-    }
-    else if (playerInput == 3) {
-        return 'nożyce';
-    }
-    printMessage('Nie znam ruchu nr. ' + playerInput + '.');
-        return 'nieznany ruch';
-  }
+}
 function displayResult(computerMove, playerMove) {
     printMessage('Komputer zagrał ' + computerMove + ' Ty, zagrałeś ' + playerMove);
     
