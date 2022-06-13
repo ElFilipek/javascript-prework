@@ -1,3 +1,4 @@
+{
 function playGame(playerInput,){
     clearMessages()
     function getMoveName(randomNumber){
@@ -51,13 +52,13 @@ function playGame(playerInput,){
         return 'Dzięki za grę'
     }
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('wylosowana liczba to ' + randomNumber);
     
-    let computerMove = getMoveName(randomNumber);
-    let playerMove = getMoveName(playerInput);
+    const computerMove = getMoveName(randomNumber);
+    const playerMove = getMoveName(playerInput);
 
-    let gameResult = displayResult(computerMove, playerMove);
+    const gameResult = displayResult(computerMove, playerMove);
     console.log(gameResult)
     printMessage(gameResult);
 }
@@ -65,7 +66,7 @@ function rockClicked(){
     playGame(1);
   }
   
-  let rockButton = document.getElementById('play-rock');
+  const rockButton = document.getElementById('play-rock');
   
   rockButton.addEventListener('click', rockClicked);
  
@@ -73,7 +74,7 @@ function paperClicked() {
     playGame(2);
   }
   
-  let paperButton = document.getElementById('play-paper');
+  const paperButton = document.getElementById('play-paper');
   
   paperButton.addEventListener('click', paperClicked);
 
@@ -81,6 +82,7 @@ function scissorsClicked(){
     playGame(3);
   }
   
-  let scissorsButton = document.getElementById('play-scissors');
+  const scissorsButton = document.getElementById('play-scissors');
   
   scissorsButton.addEventListener('click', scissorsClicked);
+}
