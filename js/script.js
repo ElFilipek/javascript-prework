@@ -1,7 +1,11 @@
 {
-function playGame(playerInput,){
+const playGame = function(playerInput){
     clearMessages()
-    function getMoveName(randomNumber){
+
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    console.log('wylosowana liczba to ' + randomNumber);
+
+    const getMoveName = function(randomNumber){
         if(randomNumber == 1){
         return 'kamień';
         }
@@ -16,7 +20,11 @@ function playGame(playerInput,){
             return 'nieznany ruch';
     
     }
-    function displayResult(computerMove, playerMove) {
+
+    const computerMove = getMoveName(randomNumber);
+    const playerMove = getMoveName(playerInput);
+    
+    const displayResult = function(computerMove, playerMove) {
         printMessage('Komputer zagrał ' + computerMove + ' Ty, zagrałeś ' + playerMove);
         
         if( computerMove == 'kamień' && playerMove == 'papier'){
@@ -52,17 +60,12 @@ function playGame(playerInput,){
         return 'Dzięki za grę'
     }
 
-    const randomNumber = Math.floor(Math.random() * 3 + 1);
-    console.log('wylosowana liczba to ' + randomNumber);
-    
-    const computerMove = getMoveName(randomNumber);
-    const playerMove = getMoveName(playerInput);
-
     const gameResult = displayResult(computerMove, playerMove);
     console.log(gameResult)
     printMessage(gameResult);
 }
-function rockClicked(){
+
+const rockClicked = function(){
     playGame(1);
   }
   
@@ -70,7 +73,7 @@ function rockClicked(){
   
   rockButton.addEventListener('click', rockClicked);
  
-function paperClicked() {
+const paperClicked = function() {
     playGame(2);
   }
   
@@ -78,7 +81,7 @@ function paperClicked() {
   
   paperButton.addEventListener('click', paperClicked);
 
-function scissorsClicked(){
+const scissorsClicked = function(){
     playGame(3);
   }
   
