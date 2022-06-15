@@ -21,8 +21,7 @@ const playGame = function(playerInput){
     
     }
 
-    const computerMove = getMoveName(randomNumber);
-    const playerMove = getMoveName(playerInput);
+    
     
     const displayResult = function(computerMove, playerMove) {
         printMessage('Komputer zagrał ' + computerMove + ' Ty, zagrałeś ' + playerMove);
@@ -30,62 +29,38 @@ const playGame = function(playerInput){
         if( computerMove == 'kamień' && playerMove == 'papier'){
             printMessage('Ty wygrywasz!');
         }
-        else if( computerMove == 'kamień' && playerMove == 'kamień'){
-            printMessage('Remis!');
-        }
-        else if( computerMove == 'kamień' && playerMove == 'nożyce'){
-            printMessage('Komputer wygrywa!');
-        }
         else if( computerMove == 'papier' && playerMove == 'nożyce'){
             printMessage('Ty wygrywasz!');
-            }
-        else if( computerMove == 'papier' && playerMove == 'kamień'){
-            printMessage('Komputer wygrywa!');
-        }
-        else if( computerMove == 'papier' && playerMove == 'papier'){
-            printMessage('Remis!');
-        }
-        else if( computerMove == 'nożyce' && playerMove == 'papier'){
-            printMessage('Komputer wygrywa!');
-        }
-        else if( computerMove == 'nożyce' && playerMove == 'nożyce'){
-            printMessage('Remis!');
         }
         else if( computerMove == 'nożyce' && playerMove == 'kamień'){
             printMessage('Ty wygrywasz!');
         }
+        else if( computerMove == 'papier' && playerMove == 'nożyce'){
+            printMessage('Ty wygrywasz!');
+            }
+        else if( computerMove == playerMove ){
+            printMessage('Remis!');
+        }
         else {
-            printMessage('została wybrana nieprawidłowa liczba');
+            printMessage('Komputer wygrywa!');
         }
         return 'Dzięki za grę'
     }
+    const computerMove = getMoveName(randomNumber);
+    const playerMove = getMoveName(playerInput);
 
     const gameResult = displayResult(computerMove, playerMove);
     console.log(gameResult)
     printMessage(gameResult);
 }
 
-const rockClicked = function(){
+document.getElementById('play-rock').addEventListener('click', function() {
     playGame(1);
-  }
-  
-  const rockButton = document.getElementById('play-rock');
-  
-  rockButton.addEventListener('click', rockClicked);
- 
-const paperClicked = function() {
+});
+document.getElementById('play-paper').addEventListener('click', function() {
     playGame(2);
-  }
-  
-  const paperButton = document.getElementById('play-paper');
-  
-  paperButton.addEventListener('click', paperClicked);
-
-const scissorsClicked = function(){
+});
+document.getElementById('play-scissors').addEventListener('click', function() {
     playGame(3);
-  }
-  
-  const scissorsButton = document.getElementById('play-scissors');
-  
-  scissorsButton.addEventListener('click', scissorsClicked);
+});
 }
